@@ -11,7 +11,7 @@ const TransactionSchema = new mongoose.Schema({
     },
     data: {
         // Todo: Go through response of Etherscan API to categorize the schema properly
-        type: String,
+        type: Object,
         required: true,
     },
 });

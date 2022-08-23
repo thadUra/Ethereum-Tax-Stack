@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
  * @access Public
  */
 router.get('/:username', (req, res) => {
-    UsersModel.find({ userOID: req.params.username }, (err, result) => {
+    UsersModel.find({ username: req.params.username }, (err, result) => {
         if (err) {
             res.json(err);
         } else {
@@ -40,16 +40,29 @@ router.get('/:username', (req, res) => {
     });
 });
 
-
 /**
- * @route POST users/:user
+ * @route POST users
  * @description Add users object 
  * @access Public
  */
 router.post('/', (req, res) => {
-    UserModel.create(req.body)
-        .then(usertrans => res.json({msg: 'User added...'}))
-        .catch(err => res.status(400).json({ error: '*Adding user failed*' }));
+    console.log(req.body.username);
+    UsersModel.updateOne(
+        { ethAddress: req.body.ethAddress}, 
+        {
+            username: req.body.username,
+            name: req.body.name,
+            ethAddress: req.body.ethAddress 
+        },
+        {upsert:true}, 
+        (err, result) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(result);
+            }
+        }
+    );
 });
 
 module.exports = router;

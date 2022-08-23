@@ -15,7 +15,7 @@ const UsersSchema = new mongoose.Schema({
     },
     ethBalance: {
         type: String,
-        required: true,
+        required: false,
     },
 });
 

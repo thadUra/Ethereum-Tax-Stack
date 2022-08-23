@@ -1,1 +1,0 @@
-// functions/getEtherBalance.js
