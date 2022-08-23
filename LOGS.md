@@ -9,3 +9,4 @@ This file keeps track of progress for the project so that we can follow along an
 **7/14/2022** - *Teddy* - Set up database with proper schema for organization. Laid out needed functions for backend logic and APIs. Got EtherscanAPI working with GET requests working properly.
 **7/18/2022** - *Teddy* - Starting restructure of backend with proper formatting of file structure for readability and navigation. Will continue tomorrow.
 **7/23/2022** - *Teddy* - Reorganized structure of backend with routes consisting of different functions and apis needed for HTTP requests.
+**8/17/2022** - *Teddy* - Reorganized structure of index.js and moved all routes and functions to their respective files.
